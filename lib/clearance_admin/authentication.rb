@@ -26,7 +26,7 @@ module Clearance
        # Denies access for non-admins
        #
        def admin_only
-         deny_access("Please Login as an administrator to Access that Feature.") unless signed_in_as_admin?
+         deny_access("Please Login as an Administrator to Access that Feature.") unless signed_in_as_admin?
        end
      
    end

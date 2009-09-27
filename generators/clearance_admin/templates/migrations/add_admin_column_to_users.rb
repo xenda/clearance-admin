@@ -1,6 +1,6 @@
 class ClearanceAdminAddAdminColumnToUsers < ActiveRecord::Migration
   def self.up
-    add_column :users, :admin, :boolean
+    add_column :users, :admin, :boolean, :default => false
     add_index :users, :admin
   end
 
