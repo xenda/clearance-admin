@@ -1,9 +1,9 @@
-= herecms
+= Clearance Admin
 
 
 == DESCRIPTION:
 
-Added Admin functionality to Clearance
+Added Admin functionality to Clearance. Based on the work of Jerry: http://github.com/jerry/clearance_admins/
 
 == FEATURES/PROBLEMS:
 
@@ -11,7 +11,7 @@ None yet
 
 == REQUIREMENTS:
 
-The clearance engine
+The Clearance engine
 
 == INSTALL:
 
@@ -19,13 +19,15 @@ Add the plugin:
 
 ./script/plugin install git://github.com/srdperu/clearance_admin.git
 
-Create the migrations
+Run the generate file to create migrations and add the include statements to your Controller and Model files:
 
 ./script/generate clearance_admin
 
-And run your new migration files:
+Run your new migration files:
 
 rake db:migrate
+
+You are done!
 
 == LICENSE:
 
