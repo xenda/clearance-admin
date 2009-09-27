@@ -15,7 +15,17 @@ The clearance engine
 
 == INSTALL:
 
-gem install xenda-clearance_admin --source=http://gems.github.com
+Add the plugin:
+
+./script/plugin install git://github.com/srdperu/clearance_admin.git
+
+Create the migrations
+
+./script/generate clearance_admin
+
+And run your new migration files:
+
+rake db:migrate
 
 == LICENSE:
 
