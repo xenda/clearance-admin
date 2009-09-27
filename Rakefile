@@ -1,3 +1,8 @@
+
+# -*- ruby -*-
+
+require 'rubygems'
+require 'hoe'
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
@@ -21,3 +26,11 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+Hoe.spec 'clearance_admin' do
+  # developer('FIX', 'FIX@example.com')
+
+  # self.rubyforge_name = 'herecmsx' # if different than 'herecms'
+end
+
+# vim: syntax=ruby
