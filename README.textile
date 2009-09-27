@@ -1,35 +1,84 @@
-= Clearance Admin
+h1. Clearance Admin
 
+p. Added Admin functionality to Clearance. Based on the work of Jerry: http://github.com/jerry/clearance_admins/
 
-== DESCRIPTION:
-
-Added Admin functionality to Clearance. Based on the work of Jerry: http://github.com/jerry/clearance_admins/
-
-== FEATURES/PROBLEMS:
-
-None yet
-
-== REQUIREMENTS:
+h2. Requirements
 
 The Clearance engine
 
-== INSTALL:
+h2. Installation
 
 Add the plugin:
 
+<pre>
+<code>
 ./script/plugin install git://github.com/srdperu/clearance_admin.git
+</code>
+</pre>
 
 Run the generate file to create migrations and add the include statements to your Controller and Model files:
 
+<pre>
+<code>
 ./script/generate clearance_admin
+</code>
+</pre>
 
 Run your new migration files:
 
+<pre>
+<code>
 rake db:migrate
+</code>
+</pre>
 
 You are done!
 
-== LICENSE:
+h2. How does it works?
+
+p. It will add a new admin column to the User table and new module functionality for filtering users, adding barriers for non-users and non-admins.
+
+p. If you don't use the generator, be sure to add 
+
+<pre>
+<code>
+  class ApplicationController < ActionController::Base
+    include Clearance::Admin
+</code>
+</pre>
+
+and 
+
+<pre>
+<code>
+  class User < ActiveRecord::Base
+    include Clearance::Admin::User
+</code>
+</pre>
+
+p. You can then restrict access to your controllers like: 
+
+<pre>
+<code>
+  class ProjectsController < ApplicationController
+
+    before_filter :admin_only
+    
+  end</code>
+</pre>
+
+p. Or even restrict access to non-admin or non-logged users like:
+
+<pre>
+<code>
+  class ProjectsController < ApplicationController
+
+    before_filter :user_only
+    
+  end</code>
+</pre>
+
+h2. LICENSE:
 
 (The MIT License)
 
