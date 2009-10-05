@@ -12,7 +12,7 @@ Add the plugin:
 
 <pre>
 <code>
-./script/plugin install git://github.com/srdperu/clearance_admin.git
+./script/plugin install git://github.com/srdperu/clearance-admin.git
 </code>
 </pre>
 
