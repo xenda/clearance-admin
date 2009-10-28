@@ -2,18 +2,18 @@ module Clearance
   module Admin  
     module User
 
-        def self.included(model)
-          model.send(:include, InstanceMethods)
-          model.send(:include, AttrAccessor)
-        end
+      def self.included(model)
+         model.send(:include, InstanceMethods)
+         model.send(:include, AttrAccessor)
+       end
 
-        module InstanceMethods
-      
-          def admin?
-            self.admin
-          end
-      
-        end    
+       module InstanceMethods
+     
+         def admin?
+           self.admin
+         end
+     
+       end    
 
 
 		    module AttrAccessor
@@ -26,7 +26,6 @@ module Clearance
 		        end
 		      end
 		    end
-
 
     end
   end
